@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/gameBoard.js" defer></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="title">
-            <h1>Tic Tac Toe</h1>
-        </div>
-        <div class="score-board">
-            <div class="player-one-score">0</div>
-            <div class="score-text">score</div>
-            <div class="player-two-score">0</div>
-
-        </div>
-        <div class="game-board">
-            <div class="cell cell-0"></div>
-            <div class="cell cell-1"></div>
-            <div class="cell cell-2"></div>
-            <div class="cell cell-3"></div>
-            <div class="cell cell-4"></div>
-            <div class="cell cell-5"></div>
-            <div class="cell cell-6"></div>
-            <div class="cell cell-7"></div>
-            <div class="cell cell-8"></div>
-            <div class="button">Play</div>
-        </div>
+      <div class="title">
+        <h1>Tic Tac Toe</h1>
+      </div>
+      <div class="score-board">
+        <div class="player-one-score">0</div>
+        <div class="score-text">score</div>
+        <div class="player-two-score">0</div>
+      </div>
+      <div class="game-board">
+        <div class="cell cell-0 hide"></div>
+        <div class="cell cell-1 hide"></div>
+        <div class="cell cell-2 hide"></div>
+        <div class="cell cell-3 hide"></div>
+        <div class="cell cell-4 hide"></div>
+        <div class="cell cell-5 hide"></div>
+        <div class="cell cell-6 hide"></div>
+        <div class="cell cell-7 hide"></div>
+        <div class="cell cell-8 hide"></div>
+        <div class="play cell-4">Play</div>
+        <div class="winner cell-4 hide"></div>
+        <div class="hide play-again cell-7">Play again</div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

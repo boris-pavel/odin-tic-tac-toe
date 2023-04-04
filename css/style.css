@@ -21,7 +21,7 @@
   justify-self: center;
   text-align: center;
   color: white;
-  font-size: 3vw;
+  font-size: 1.4rem;
   font-family: "Great Vibes", cursive;
   text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
@@ -40,7 +40,7 @@
   text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .game-board {
@@ -52,24 +52,29 @@
   border-radius: 10px;
   display: grid;
   grid-template:
-    ". . ." 0.1fr
-    "cell-0 cell-1 cell-2" 0.23fr
-    "cell-3 cell-4 cell-5" 0.23fr
-    "cell-6 cell-7 cell-8" 0.23fr
-    ". button ." 0.1fr / 0.23fr 0.23fr 0.23fr;
+    "cell-0 cell-1 cell-2" 0.2fr
+    "cell-3 cell-4 cell-5" 0.2fr
+    "cell-6 cell-7 cell-8" 0.2fr
+    / 0.2fr 0.2fr 0.2fr;
   gap: 10px;
   justify-content: center;
   align-content: center;
 }
-.cell{
-    background-color: #d7263d;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+.cell {
+  background-color: #d7263d;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  font-family: "Great Vibes";
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-size: 2rem;
+  color: azure;
+  font-weight: bold;;
 }
-.cell:hover{
-    background-color: rgba(215, 38, 61, 0.7);
-    cursor: pointer;
-    
+.cell:hover {
+  background-color: rgba(215, 38, 61, 0.7);
+  cursor: pointer;
 }
 .cell-0 {
   grid-area: cell-0;
@@ -111,7 +116,7 @@
   grid-area: button;
   align-self: center;
   justify-self: center;
-  padding: 0.3rem;
+  padding: 0.5rem;
   border-radius: 10px;
   color: azure;
   background-color: #d7263d;
@@ -120,5 +125,38 @@
 }
 
 .button:hover {
+  background-color: hsla(352, 70%, 50%, 0.7);
+}
+
+.hide {
+    display: none;
+}
+
+.play,
+.play-again {
+    background-color: #d7263d;
+    color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    font-size: 1.3rem;
+}
+
+.play:hover,
+.play-again:hover {
     background-color: rgba(215, 38, 61, 0.7);
+    cursor:pointer;
+}
+
+.winner{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-again {
+    text-align: center;
+    display: none;
 }
