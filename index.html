@@ -15,9 +15,15 @@
         <h1>Tic Tac Toe</h1>
       </div>
       <div class="score-board">
-        <div class="player-one-score">0</div>
+        <div class="player-one">
+          <div class="player-one-name"></div>
+          <div class="player-one-score">0</div>
+        </div>
         <div class="score-text">score</div>
-        <div class="player-two-score">0</div>
+        <div class="player-two">
+          <div class="player-two-name"></div>
+          <div class="player-two-score">0</div>
+        </div>
       </div>
       <div class="game-board">
         <div class="cell cell-0 hide"></div>
@@ -32,6 +38,12 @@
         <div class="play cell-4">Play</div>
         <div class="winner cell-4 hide"></div>
         <div class="hide play-again cell-7">Play again</div>
+        <div class="player-name cell-1">
+          <label for="name">
+            Insert name:
+          </label>
+          <input type="text" name="name" id="name">
+        </div>
       </div>
     </div>
   </body>

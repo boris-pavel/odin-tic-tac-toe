@@ -1,13 +1,13 @@
 const gameBoard = (function () {
-  const Player = (sign) => {
+  let board = ["", "", "", "", "", "", "", "", ""];
+  const Player = (sign, name) => {
     const score = 0;
-    return { sign, score };
+    const username = name;
+    return { sign, score, username };
   };
 
-  const player = Player("x");
-  const computer = Player("o");
-
-  let board = ["", "", "", "", "", "", "", "", ""];
+  const player = Player("x", "Player");
+  const computer = Player("o", "Computer");
 
   // cache DOM
   const game = document.querySelector(".game-board");
@@ -17,6 +17,10 @@ const gameBoard = (function () {
   const playAgainBtn = game.querySelector(".play-again");
   const playerOneScore = document.querySelector(".player-one-score");
   const playerTwoScore = document.querySelector(".player-two-score");
+  const playerOneName = document.querySelector(".player-one-name");
+  const playerTwoName = document.querySelector(".player-two-name");
+  const inputDiv = document.querySelector(".player-name");
+  const input = document.querySelector(".player-name > input");
 
   function checkBoardFull() {
     // eslint-disable-next-line no-restricted-syntax
@@ -29,6 +33,8 @@ const gameBoard = (function () {
   function updateScore() {
     playerOneScore.textContent = player.score;
     playerTwoScore.textContent = computer.score;
+    playerOneName.textContent = player.username;
+    playerTwoName.textContent = computer.username;
   }
 
   function render() {
@@ -46,7 +52,8 @@ const gameBoard = (function () {
 
   function startGame() {
     board = ["", "", "", "", "", "", "", "", ""];
-
+    console.log(input.value);
+    player.username = input.value;
     cells.forEach((cell) => {
       cell.classList.toggle("hide");
       cell.style["pointer-events"] = "auto";
@@ -54,12 +61,13 @@ const gameBoard = (function () {
     playBtn.style.display = "none";
     playAgainBtn.style.display = "none";
     winnerDiv.style.display = "none";
+    inputDiv.style.display = "none";
     render();
   }
 
   function displayWinner(winner) {
     cells.forEach((cell) => cell.classList.add("hide"));
-    winnerDiv.textContent = `${winner} has won!`;
+    winnerDiv.textContent = `${winner === 'x'?player.username:computer.username} has won!`;
     if (winner === "draw") winnerDiv.textContent = "It's a draw";
     winnerDiv.style.display = "flex";
     playAgainBtn.style.display = "flex";
@@ -135,4 +143,5 @@ const gameBoard = (function () {
     })
   );
   playAgainBtn.addEventListener("click", startGame);
+  return {input};
 })();

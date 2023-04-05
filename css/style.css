@@ -160,3 +160,7 @@
     text-align: center;
     display: none;
 }
+
+.player-name {
+  text-align: center
+}
